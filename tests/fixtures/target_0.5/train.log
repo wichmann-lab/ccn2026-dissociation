@@ -1,0 +1,4 @@
+[INFO] EPOCH [01/03] TRAIN: Loss: 1.234 MCA: 0.7100 ReprAlignmentAgg: 0.05 ReprAlignment/avgpool-avgpool: 0.0400 VAL: Loss: 1.100 MCA: 0.7500 ReprAlignmentAgg: 0.03 ReprAlignment/avgpool-avgpool: 0.0210
+[INFO] EPOCH [02/03] TRAIN: Loss: 1.000 MCA: 0.7600 ReprAlignmentAgg: 0.02 ReprAlignment/avgpool-avgpool: 0.0100 VAL: Loss: 0.950 MCA: 0.7900 ReprAlignmentAgg: 0.01 ReprAlignment/avgpool-avgpool: 0.0050
+[INFO] EPOCH [03/03] TRAIN: Loss: 0.990 MCA: 0.7650 ReprAlignmentAgg: 0.02 ReprAlignment/avgpool-avgpool: 0.0120 VAL: Loss: 0.960 MCA: 0.7850 ReprAlignmentAgg: 0.01 ReprAlignment/avgpool-avgpool: -0.0030
+[INFO] The best performing model achieved a score of 0.7900 after 2 epochs of training.

@@ -1,0 +1,28 @@
+rs_target: 0.5
+criterion:
+  target_scores: ${rs_target}
+  similarity_measure:
+    name: RSA
+compute:
+  name: euclidean
+compare:
+  name: spearman
+model:
+  name: ResNet
+repr_similarity:
+  model_train:
+    name: ResNet
+  model_ref:
+    name: ResNet
+    checkpoint: null
+  measure_on_neural_data: false
+dataset:
+  name: ImageNet
+  n_classes: 1000
+  stats:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+transform:
+  val:
+    resize_size: 256
+    crop_size: 224

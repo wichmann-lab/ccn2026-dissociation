@@ -1,0 +1,42 @@
+{
+  "title": "Code for \"Representation can dissociate from function and behaviour in task-optimised vision networks\"",
+  "upload_type": "software",
+  "description": "<p>Code and figures accompanying the extended abstract \"<a href=\"https://openreview.net/forum?id=IXC4dtfKgC\">Representation can dissociate from function and behaviour in task-optimised vision networks</a>\", presented at the <a href=\"https://2026.ccneuro.org\">9th Annual Conference on Cognitive Computational Neuroscience (CCN 2026)</a> in New York, USA.</p><p>The training runs behind Figure 1 are archived separately at <a href=\"https://doi.org/10.5281/zenodo.24162774\">doi.org/10.5281/zenodo.24162774</a>.</p>",
+  "creators": [
+    {
+      "name": "Theiss, Marvin",
+      "affiliation": "University of Tübingen; IMPRS-IS",
+      "orcid": "0009-0002-0117-8532"
+    },
+    {
+      "name": "Fausten, Ben",
+      "affiliation": "University of Tübingen"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "representational similarity",
+    "RSA",
+    "CKA",
+    "error consistency",
+    "brain-model alignment",
+    "vision networks",
+    "deep neural networks"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://openreview.net/forum?id=IXC4dtfKgC",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-conferencepaper",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.24162774",
+      "relation": "requires",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ]
+}

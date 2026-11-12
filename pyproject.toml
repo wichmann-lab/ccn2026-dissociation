@@ -1,0 +1,143 @@
+[project]
+name = "ccn2026-dissociation"
+version = "1.0.0"
+description = "Code accompanying the extended abstract \"Representation can dissociate from function and behaviour in task-optimised vision networks\" (CCN 2026)."
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Marvin Theiss", email = "marvin.theiss@uni-tuebingen.de" },
+    { name = "Ben Fausten", email = "ben.fausten@student.uni-tuebingen.de" },
+]
+keywords = [
+    "representational similarity",
+    "RSA",
+    "CKA",
+    "error consistency",
+    "brain-model alignment",
+    "vision networks",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "marimo>=0.19.4",
+    "matplotlib>=3.10.0",
+    "numpy>=2.2.0",
+    "pillow>=11.0.0",
+    "pyyaml>=6.0.2",
+    "scipy>=1.15.0",
+]
+
+# torch and torchvision are specified in two mutually exclusive extras so that
+# PyTorch build is chosen at sync time (``uv sync --extra cpu`` or
+# ``--extra cuda``) and kept by every later ``uv run``. ``cpu`` takes the
+# CPU build from the PyTorch index on Linux; ``cuda`` takes PyPI's build,
+# which carries CUDA on Linux. On macOS and Windows PyPI only has CPU
+# builds, so both extras install the same wheels there.
+[project.optional-dependencies]
+cpu = [
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+]
+cuda = [
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+]
+
+[dependency-groups]
+dev = [
+    "prek>=0.2.25",
+    "pytest>=8.0.0",
+    "ruff>=0.14.10",
+    "ty>=0.0.16",
+]
+
+[project.urls]
+Repository = "https://github.com/wichmann-lab/ccn2026-dissociation"
+Paper = "https://openreview.net/forum?id=IXC4dtfKgC"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dissociation"]
+
+# On Linux, PyPI serves CUDA builds of torch (several GB of NVIDIA wheels).
+# Nothing in this repository needs a GPU except the optional precompute step,
+# so Linux installs the CPU wheels by default; see the README for CUDA.
+[tool.uv]
+conflicts = [[{ extra = "cpu" }, { extra = "cuda" }]]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", extra = "cpu", marker = "sys_platform == 'linux'" },
+]
+torchvision = [
+    { index = "pytorch-cpu", extra = "cpu", marker = "sys_platform == 'linux'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.marimo.runtime]
+pythonpath = ["notebooks", "src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+select = ["ALL"]
+allowed-confusables = ["–"]  # en dash: APA 7 page ranges and titles
+ignore = [
+    "COM812",  # trailing commas conflict with ruff formatter
+    "CPY001",  # no per-file copyright headers; the LICENSE file covers the repository
+    "PLR0913",  # many argument parameters
+    "PLR0915",  # long functions
+    "PLR0917",  # many positional parameters (plotting helpers)
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.flake8-annotations]
+allow-star-arg-any = true  # allow Any for *args/**kwargs (pass-through to external APIs)
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/**/*.py" = [
+    "ANN001",  # cell function args are injected by marimo runtime
+    "ANN202",  # cell function return types are handled by marimo runtime
+    "B018",  # a bare expression at the end of a cell is the cell's output
+    "D100",  # notebooks don't need module docstrings
+    "EXE",  # marimo notebooks don't need shebangs (run via marimo CLI)
+    "INP001",  # notebooks dir is not a package (no __init__.py needed)
+    "N803",  # uppercase constants are passed between cells as arguments
+    "N806",  # uppercase constants are defined inside cell functions
+    "PLC0415",  # imports inside cell functions are required by marimo's reactive model
+    "PLR1711",  # explicit returns in cell functions are part of marimo's structure
+    "T201",  # print statements are fine in notebooks
+]
+"scripts/*.py" = [
+    "INP001",  # scripts dir is not a package (no __init__.py needed)
+    "T201",  # scripts report progress with print
+]
+"tests/*.py" = [
+    "ANN001",  # self parameter doesn't need type annotation
+    "PLR2004",  # magic values are fine in tests
+    "S",  # security (assert, random)
+]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true

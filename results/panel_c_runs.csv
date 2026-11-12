@@ -1,0 +1,9 @@
+group,source,seed,rs_target,ec_target,rs,ec,accuracy,origin
+baseline,panel-c/baselines/run_1337,1337,,,0.9111,0.7533,0.9418,precompute
+baseline,panel-c/baselines/run_2026,2026,,,0.9366,0.7729,0.9479,precompute
+baseline,panel-c/baselines/run_42,42,,,0.9424,0.7562,0.9468,precompute
+baseline,panel-c/baselines/run_54,54,,,0.9364,0.7564,0.9458,precompute
+baseline,panel-c/baselines/run_67,67,,,0.9267,0.7464,0.9406,precompute
+trained,panel-c/trained/run_1,276,0.9000,0.4000,0.8218,0.5371,0.9033,precompute
+trained,panel-c/trained/run_2,276,0.9500,0.2000,0.8463,0.4596,0.8839,precompute
+trained,panel-c/trained/run_3,276,0.9000,0.3000,0.8334,0.5017,0.8951,precompute

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the extended abstract below."
+title: 'Code for "Representation can dissociate from function and behaviour in task-optimised vision networks"'
+type: software
+authors:
+  - family-names: Theiss
+    given-names: Marvin
+    orcid: https://orcid.org/0009-0002-0117-8532
+    affiliation: "University of Tübingen; IMPRS-IS"
+  - family-names: Fausten
+    given-names: Ben
+    affiliation: "University of Tübingen"
+repository-code: "https://github.com/wichmann-lab/ccn2026-dissociation"
+version: 1.0.0
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Representation can dissociate from function and behaviour in task-optimised vision networks"
+  authors:
+    - family-names: Theiss
+      given-names: Marvin
+      orcid: https://orcid.org/0009-0002-0117-8532
+    - family-names: Fausten
+      given-names: Ben
+    - family-names: Wichmann
+      given-names: Felix A.
+      orcid: https://orcid.org/0000-0002-2592-634X
+  conference:
+    name: "9th Annual Conference on Cognitive Computational Neuroscience (CCN 2026)"
+    city: "New York"
+    country: US
+  year: 2026
+  url: "https://openreview.net/forum?id=IXC4dtfKgC"
