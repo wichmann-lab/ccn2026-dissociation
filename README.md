@@ -1,5 +1,7 @@
 # Representation can dissociate from function and behaviour in task-optimised vision networks
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24163736.svg)](https://doi.org/10.5281/zenodo.24163736)
+
 Code and figure sources accompanying our extended abstract
 "[Representation can dissociate from function and behaviour in
 task-optimised vision networks](https://openreview.net/forum?id=IXC4dtfKgC)"
@@ -72,7 +74,9 @@ methods used to compute their values.
 > [!IMPORTANT]
 > The checkpoints and configurations of the 53 training runs behind Fig. 1
 > (33 ResNet-50 and 11 AlexNet sweeps on ImageNet, 9 AlexNet networks on
-> CIFAR-10) are archived on Zenodo rather than in this repository.
+> CIFAR-10) are archived on Zenodo
+> ([doi:10.5281/zenodo.24162774](https://doi.org/10.5281/zenodo.24162774))
+> rather than in this repository.
 > `scripts/download_runs.py` fetches them into `data/runs/`, and
 > `scripts/precompute_results.py` recomputes the tables from the checkpoints
 > (accuracy, error consistency and representational similarity to the
