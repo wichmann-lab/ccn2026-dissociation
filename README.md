@@ -1,6 +1,8 @@
 # Representation can dissociate from function and behaviour in task-optimised vision networks
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24163735.svg)](https://doi.org/10.5281/zenodo.24163735)
+[![OpenReview](https://img.shields.io/badge/OpenReview-CCN_2026-8c1b13)](https://openreview.net/forum?id=IXC4dtfKgC)
+[![Code](https://img.shields.io/badge/Code-10.5281%2Fzenodo.24163735-1682d4)](https://doi.org/10.5281/zenodo.24163735)
+[![Data](https://img.shields.io/badge/Data-10.5281%2Fzenodo.24162774-1682d4)](https://doi.org/10.5281/zenodo.24162774)
 
 Code and figure sources accompanying our extended abstract
 "[Representation can dissociate from function and behaviour in
